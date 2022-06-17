@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\VentasController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +36,7 @@ Route::get('/api/contact/{id}', [ContactsController::class, 'findId']);
 Route::put('/api/contact/{id}', [ContactsController::class, 'update']);
 
 Route::delete('/api/contact/{id}', [ContactsController::class, 'destroy']);
+
+Route::get('/api/category/products/{id}', [CategoriesController::class, 'findProducts']);
+
+Route::get('/api/user/ventas/{id_user}', [VentasController::class, 'sellByUser']);
